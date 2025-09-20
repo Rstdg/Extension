@@ -1,0 +1,14 @@
+{
+  "apps": [
+    {
+      "name": "Asura Scans",
+      "pkg": "eu.kanade.tachiyomi.extension.en.asurascans",
+      "apk": "apk/en.asurascans.48.apk",
+      "lang": "en",
+      "code": 48,
+      "version": "1.4.48",
+      "nsfw": 0
+    }
+  ],
+  "versionCode": 1
+}
