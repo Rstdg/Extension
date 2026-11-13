@@ -1,0 +1,121 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:2:1-38:12
+INJECTED from C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:2:1-38:12
+INJECTED from C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:2:1-38:12
+INJECTED from C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:2:1-38:12
+MERGED from [com.squareup.okhttp3:okhttp-android:5.3.2] C:\Users\deang\.gradle\caches\9.6.0\transforms\e64a7898b23e04bcc4802b8acb75a905\transformed\okhttp-release\AndroidManifest.xml:2:1-22:12
+MERGED from [androidx.startup:startup-runtime:1.2.0] C:\Users\deang\.gradle\caches\9.6.0\transforms\844168b6094edc367b7b487d688fcd38\transformed\startup-runtime-1.2.0\AndroidManifest.xml:17:1-31:12
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\deang\.gradle\caches\9.6.0\transforms\5aad33ebf4cdfca495acf13038923cdb\transformed\tracing-1.0.0\AndroidManifest.xml:17:1-24:12
+	package
+		ADDED from C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:3:5-53
+		INJECTED from C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml
+	android:versionCode
+		INJECTED from C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:2:11-69
+application
+ADDED from C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:5:5-36:19
+INJECTED from C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:5:5-36:19
+MERGED from [com.squareup.okhttp3:okhttp-android:5.3.2] C:\Users\deang\.gradle\caches\9.6.0\transforms\e64a7898b23e04bcc4802b8acb75a905\transformed\okhttp-release\AndroidManifest.xml:10:5-20:19
+MERGED from [com.squareup.okhttp3:okhttp-android:5.3.2] C:\Users\deang\.gradle\caches\9.6.0\transforms\e64a7898b23e04bcc4802b8acb75a905\transformed\okhttp-release\AndroidManifest.xml:10:5-20:19
+MERGED from [androidx.startup:startup-runtime:1.2.0] C:\Users\deang\.gradle\caches\9.6.0\transforms\844168b6094edc367b7b487d688fcd38\transformed\startup-runtime-1.2.0\AndroidManifest.xml:23:5-29:19
+MERGED from [androidx.startup:startup-runtime:1.2.0] C:\Users\deang\.gradle\caches\9.6.0\transforms\844168b6094edc367b7b487d688fcd38\transformed\startup-runtime-1.2.0\AndroidManifest.xml:23:5-29:19
+	android:extractNativeLibs
+		INJECTED from C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml
+	android:label
+		ADDED from C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:6:9-41
+	android:hasCode
+		ADDED from C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:8:9-31
+	android:icon
+		ADDED from C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:7:9-43
+meta-data#tachiyomi.extension.class
+ADDED from C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:10:9-12:43
+	android:value
+		ADDED from C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:12:13-40
+	android:name
+		ADDED from C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:11:13-53
+meta-data#tachiyomi.extension.factory
+ADDED from C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:13:9-15:37
+	android:value
+		ADDED from C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:15:13-34
+	android:name
+		ADDED from C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:14:13-55
+meta-data#tachiyomi.extension.nsfw
+ADDED from C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:16:9-18:33
+	android:value
+		ADDED from C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:18:13-30
+	android:name
+		ADDED from C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:17:13-52
+meta-data#tachiyomi.extension.hasReadme
+ADDED from C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:19:9-21:33
+	android:value
+		ADDED from C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:21:13-30
+	android:name
+		ADDED from C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:20:13-57
+activity#eu.kanade.tachiyomi.extension.en.nhapi.NHentaiUrlActivity
+ADDED from C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:23:9-35:20
+	android:exported
+		ADDED from C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:25:13-36
+	android:name
+		ADDED from C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:24:13-47
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:nhentai.net+data:pathPrefix:/g/+data:scheme:https
+ADDED from C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:26:13-34:29
+action#android.intent.action.VIEW
+ADDED from C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:27:17-69
+	android:name
+		ADDED from C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:27:25-66
+category#android.intent.category.DEFAULT
+ADDED from C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:28:17-76
+	android:name
+		ADDED from C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:28:27-73
+category#android.intent.category.BROWSABLE
+ADDED from C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:29:17-78
+	android:name
+		ADDED from C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:29:27-75
+data
+ADDED from C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:30:17-33:48
+	android:host
+		ADDED from C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:32:21-47
+	android:scheme
+		ADDED from C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:31:21-43
+	android:pathPrefix
+		ADDED from C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:33:21-45
+uses-sdk
+INJECTED from C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml
+INJECTED from C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml
+MERGED from [com.squareup.okhttp3:okhttp-android:5.3.2] C:\Users\deang\.gradle\caches\9.6.0\transforms\e64a7898b23e04bcc4802b8acb75a905\transformed\okhttp-release\AndroidManifest.xml:6:5-44
+MERGED from [com.squareup.okhttp3:okhttp-android:5.3.2] C:\Users\deang\.gradle\caches\9.6.0\transforms\e64a7898b23e04bcc4802b8acb75a905\transformed\okhttp-release\AndroidManifest.xml:6:5-44
+MERGED from [androidx.startup:startup-runtime:1.2.0] C:\Users\deang\.gradle\caches\9.6.0\transforms\844168b6094edc367b7b487d688fcd38\transformed\startup-runtime-1.2.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.startup:startup-runtime:1.2.0] C:\Users\deang\.gradle\caches\9.6.0\transforms\844168b6094edc367b7b487d688fcd38\transformed\startup-runtime-1.2.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\deang\.gradle\caches\9.6.0\transforms\5aad33ebf4cdfca495acf13038923cdb\transformed\tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\deang\.gradle\caches\9.6.0\transforms\5aad33ebf4cdfca495acf13038923cdb\transformed\tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+	android:targetSdkVersion
+		INJECTED from C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml
+uses-permission#android.permission.INTERNET
+ADDED from [com.squareup.okhttp3:okhttp-android:5.3.2] C:\Users\deang\.gradle\caches\9.6.0\transforms\e64a7898b23e04bcc4802b8acb75a905\transformed\okhttp-release\AndroidManifest.xml:8:5-67
+	android:name
+		ADDED from [com.squareup.okhttp3:okhttp-android:5.3.2] C:\Users\deang\.gradle\caches\9.6.0\transforms\e64a7898b23e04bcc4802b8acb75a905\transformed\okhttp-release\AndroidManifest.xml:8:22-64
+provider#androidx.startup.InitializationProvider
+ADDED from [com.squareup.okhttp3:okhttp-android:5.3.2] C:\Users\deang\.gradle\caches\9.6.0\transforms\e64a7898b23e04bcc4802b8acb75a905\transformed\okhttp-release\AndroidManifest.xml:11:9-19:20
+MERGED from [androidx.startup:startup-runtime:1.2.0] C:\Users\deang\.gradle\caches\9.6.0\transforms\844168b6094edc367b7b487d688fcd38\transformed\startup-runtime-1.2.0\AndroidManifest.xml:24:9-28:34
+MERGED from [androidx.startup:startup-runtime:1.2.0] C:\Users\deang\.gradle\caches\9.6.0\transforms\844168b6094edc367b7b487d688fcd38\transformed\startup-runtime-1.2.0\AndroidManifest.xml:24:9-28:34
+	tools:node
+		ADDED from [com.squareup.okhttp3:okhttp-android:5.3.2] C:\Users\deang\.gradle\caches\9.6.0\transforms\e64a7898b23e04bcc4802b8acb75a905\transformed\okhttp-release\AndroidManifest.xml:15:13-31
+	android:authorities
+		ADDED from [com.squareup.okhttp3:okhttp-android:5.3.2] C:\Users\deang\.gradle\caches\9.6.0\transforms\e64a7898b23e04bcc4802b8acb75a905\transformed\okhttp-release\AndroidManifest.xml:13:13-68
+	android:exported
+		ADDED from [com.squareup.okhttp3:okhttp-android:5.3.2] C:\Users\deang\.gradle\caches\9.6.0\transforms\e64a7898b23e04bcc4802b8acb75a905\transformed\okhttp-release\AndroidManifest.xml:14:13-37
+	android:name
+		ADDED from [com.squareup.okhttp3:okhttp-android:5.3.2] C:\Users\deang\.gradle\caches\9.6.0\transforms\e64a7898b23e04bcc4802b8acb75a905\transformed\okhttp-release\AndroidManifest.xml:12:13-67
+meta-data#okhttp3.internal.platform.PlatformInitializer
+ADDED from [com.squareup.okhttp3:okhttp-android:5.3.2] C:\Users\deang\.gradle\caches\9.6.0\transforms\e64a7898b23e04bcc4802b8acb75a905\transformed\okhttp-release\AndroidManifest.xml:16:13-18:52
+	android:value
+		ADDED from [com.squareup.okhttp3:okhttp-android:5.3.2] C:\Users\deang\.gradle\caches\9.6.0\transforms\e64a7898b23e04bcc4802b8acb75a905\transformed\okhttp-release\AndroidManifest.xml:18:17-49
+	android:name
+		ADDED from [com.squareup.okhttp3:okhttp-android:5.3.2] C:\Users\deang\.gradle\caches\9.6.0\transforms\e64a7898b23e04bcc4802b8acb75a905\transformed\okhttp-release\AndroidManifest.xml:17:17-77

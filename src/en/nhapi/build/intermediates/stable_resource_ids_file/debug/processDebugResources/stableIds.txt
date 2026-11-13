@@ -1,0 +1,2 @@
+eu.kanade.tachiyomi.extension.en.nhapi:string/androidx_startup = 0x7f020000
+eu.kanade.tachiyomi.extension.en.nhapi:mipmap/ic_launcher = 0x7f010000
