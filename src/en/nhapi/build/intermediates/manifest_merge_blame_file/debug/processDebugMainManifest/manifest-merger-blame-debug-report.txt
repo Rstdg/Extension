@@ -16,68 +16,68 @@
 11-->[com.squareup.okhttp3:okhttp-android:5.3.2] C:\Users\deang\.gradle\caches\9.6.0\transforms\e64a7898b23e04bcc4802b8acb75a905\transformed\okhttp-release\AndroidManifest.xml:8:22-64
 12
 13    <application
-13-->C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:5:5-36:19
+13-->C:\Users\deang\AndroidStudioProjects\Extension\src\en\nhapi\AndroidManifest.xml:5:5-36:19
 14        android:debuggable="true"
 15        android:extractNativeLibs="false"
 15-->INJECTED
 16        android:hasCode="true"
-16-->C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:8:9-31
+16-->C:\Users\deang\AndroidStudioProjects\Extension\src\en\nhapi\AndroidManifest.xml:8:9-31
 17        android:icon="@mipmap/ic_launcher"
-17-->C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:7:9-43
+17-->C:\Users\deang\AndroidStudioProjects\Extension\src\en\nhapi\AndroidManifest.xml:7:9-43
 18        android:label="NHentai (API v2)" >
-18-->C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:6:9-41
+18-->C:\Users\deang\AndroidStudioProjects\Extension\src\en\nhapi\AndroidManifest.xml:6:9-41
 19        <meta-data
-19-->C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:10:9-12:43
+19-->C:\Users\deang\AndroidStudioProjects\Extension\src\en\nhapi\AndroidManifest.xml:10:9-12:43
 20            android:name="tachiyomi.extension.class"
-20-->C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:11:13-53
+20-->C:\Users\deang\AndroidStudioProjects\Extension\src\en\nhapi\AndroidManifest.xml:11:13-53
 21            android:value=".NHentaiApi" />
-21-->C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:12:13-40
+21-->C:\Users\deang\AndroidStudioProjects\Extension\src\en\nhapi\AndroidManifest.xml:12:13-40
 22        <meta-data
-22-->C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:13:9-15:37
+22-->C:\Users\deang\AndroidStudioProjects\Extension\src\en\nhapi\AndroidManifest.xml:13:9-15:37
 23            android:name="tachiyomi.extension.factory"
-23-->C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:14:13-55
+23-->C:\Users\deang\AndroidStudioProjects\Extension\src\en\nhapi\AndroidManifest.xml:14:13-55
 24            android:value="false" />
-24-->C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:15:13-34
+24-->C:\Users\deang\AndroidStudioProjects\Extension\src\en\nhapi\AndroidManifest.xml:15:13-34
 25        <meta-data
-25-->C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:16:9-18:33
+25-->C:\Users\deang\AndroidStudioProjects\Extension\src\en\nhapi\AndroidManifest.xml:16:9-18:33
 26            android:name="tachiyomi.extension.nsfw"
-26-->C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:17:13-52
+26-->C:\Users\deang\AndroidStudioProjects\Extension\src\en\nhapi\AndroidManifest.xml:17:13-52
 27            android:value="1" />
-27-->C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:18:13-30
+27-->C:\Users\deang\AndroidStudioProjects\Extension\src\en\nhapi\AndroidManifest.xml:18:13-30
 28        <meta-data
-28-->C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:19:9-21:33
+28-->C:\Users\deang\AndroidStudioProjects\Extension\src\en\nhapi\AndroidManifest.xml:19:9-21:33
 29            android:name="tachiyomi.extension.hasReadme"
-29-->C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:20:13-57
+29-->C:\Users\deang\AndroidStudioProjects\Extension\src\en\nhapi\AndroidManifest.xml:20:13-57
 30            android:value="1" />
-30-->C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:21:13-30
+30-->C:\Users\deang\AndroidStudioProjects\Extension\src\en\nhapi\AndroidManifest.xml:21:13-30
 31
 32        <activity
-32-->C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:23:9-35:20
+32-->C:\Users\deang\AndroidStudioProjects\Extension\src\en\nhapi\AndroidManifest.xml:23:9-35:20
 33            android:name="eu.kanade.tachiyomi.extension.en.nhapi.NHentaiUrlActivity"
-33-->C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:24:13-47
+33-->C:\Users\deang\AndroidStudioProjects\Extension\src\en\nhapi\AndroidManifest.xml:24:13-47
 34            android:exported="true" >
-34-->C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:25:13-36
+34-->C:\Users\deang\AndroidStudioProjects\Extension\src\en\nhapi\AndroidManifest.xml:25:13-36
 35            <intent-filter>
-35-->C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:26:13-34:29
+35-->C:\Users\deang\AndroidStudioProjects\Extension\src\en\nhapi\AndroidManifest.xml:26:13-34:29
 36                <action android:name="android.intent.action.VIEW" />
-36-->C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:27:17-69
-36-->C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:27:25-66
+36-->C:\Users\deang\AndroidStudioProjects\Extension\src\en\nhapi\AndroidManifest.xml:27:17-69
+36-->C:\Users\deang\AndroidStudioProjects\Extension\src\en\nhapi\AndroidManifest.xml:27:25-66
 37
 38                <category android:name="android.intent.category.DEFAULT" />
-38-->C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:28:17-76
-38-->C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:28:27-73
+38-->C:\Users\deang\AndroidStudioProjects\Extension\src\en\nhapi\AndroidManifest.xml:28:17-76
+38-->C:\Users\deang\AndroidStudioProjects\Extension\src\en\nhapi\AndroidManifest.xml:28:27-73
 39                <category android:name="android.intent.category.BROWSABLE" />
-39-->C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:29:17-78
-39-->C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:29:27-75
+39-->C:\Users\deang\AndroidStudioProjects\Extension\src\en\nhapi\AndroidManifest.xml:29:17-78
+39-->C:\Users\deang\AndroidStudioProjects\Extension\src\en\nhapi\AndroidManifest.xml:29:27-75
 40
 41                <data
-41-->C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:30:17-33:48
+41-->C:\Users\deang\AndroidStudioProjects\Extension\src\en\nhapi\AndroidManifest.xml:30:17-33:48
 42                    android:host="nhentai.net"
-42-->C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:32:21-47
+42-->C:\Users\deang\AndroidStudioProjects\Extension\src\en\nhapi\AndroidManifest.xml:32:21-47
 43                    android:pathPrefix="/g/"
-43-->C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:33:21-45
+43-->C:\Users\deang\AndroidStudioProjects\Extension\src\en\nhapi\AndroidManifest.xml:33:21-45
 44                    android:scheme="https" />
-44-->C:\Users\deang\AndroidStudioProjects\mihon\src\en\nhapi\AndroidManifest.xml:31:21-43
+44-->C:\Users\deang\AndroidStudioProjects\Extension\src\en\nhapi\AndroidManifest.xml:31:21-43
 45            </intent-filter>
 46        </activity>
 47

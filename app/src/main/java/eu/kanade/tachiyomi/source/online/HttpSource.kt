@@ -52,5 +52,7 @@ abstract class HttpSource : Source {
 
     abstract fun pageListParse(response: Response): List<Page>
 
+    open fun imageRequest(page: Page): Request = GET(page.imageUrl!!, headers)
+
     abstract fun imageUrlParse(response: Response): String
 }

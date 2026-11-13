@@ -9,6 +9,7 @@ import eu.kanade.tachiyomi.source.model.Page
 import eu.kanade.tachiyomi.source.model.SChapter
 import eu.kanade.tachiyomi.source.model.SManga
 import eu.kanade.tachiyomi.source.online.HttpSource
+import okhttp3.Headers
 import okhttp3.HttpUrl
 import okhttp3.HttpUrl.Companion.toHttpUrl
 import okhttp3.OkHttpClient
@@ -37,9 +38,18 @@ class NHentaiApi : HttpSource() {
         .rateLimit(3, 1, TimeUnit.SECONDS)
         .build()
 
-    override fun headersBuilder() = super.headersBuilder()
+    override fun headersBuilder(): Headers.Builder = super.headersBuilder()
         .add("Authorization", "Bearer $API_KEY")
         .add("Accept", "application/json")
+
+    // Clean headers without Auth & Accept JSON for image loading
+    override fun imageRequest(page: Page): Request {
+        val cleanHeaders = headers.newBuilder()
+            .removeAll("Authorization")
+            .removeAll("Accept")
+            .build()
+        return GET(page.imageUrl!!, cleanHeaders)
+    }
 
     // ─────────────────────── POPULAR ───────────────────────
 
@@ -60,13 +70,14 @@ class NHentaiApi : HttpSource() {
     // ─────────────────────── SEARCH ───────────────────────
 
     override fun searchMangaRequest(page: Int, query: String, filters: FilterList): Request {
-        // Deep-link support: "id:123456" opens the gallery directly
-        if (query.startsWith("id:")) {
-            return GET("$apiUrl/galleries/" + query.removePrefix("id:"), headers)
+        val cleanQuery = query.trim()
+        val id = cleanQuery.removePrefix("id:").removePrefix("/g/").trim()
+        if (id.isNotEmpty() && id.all { it.isDigit() }) {
+            return GET("$apiUrl/galleries/$id", headers)
         }
 
         val url = "$apiUrl/galleries/search".toHttpUrlBuilderCompat().apply {
-            addQueryParameter("query", query)
+            addQueryParameter("query", if (cleanQuery.isBlank()) "*" else cleanQuery)
             addQueryParameter("page", page.toString())
         }
 
@@ -80,38 +91,55 @@ class NHentaiApi : HttpSource() {
     }
 
     override fun searchMangaParse(response: Response): MangasPage {
-        // Single-gallery response (from id: query) — shape has no "result" array
         val body = response.body?.string() ?: ""
+        if (body.isBlank()) return MangasPage(emptyList(), false)
+
         val json = JSONObject(body)
+        // Single-gallery response (from direct ID query) — shape has no "result" array
         if (!json.has("result")) {
-            val manga = galleryToSManga(json)
-            return MangasPage(listOf(manga), hasNextPage = false)
+            if (json.has("id")) {
+                val manga = galleryToSManga(json)
+                return MangasPage(listOf(manga), hasNextPage = false)
+            }
+            return MangasPage(emptyList(), false)
         }
 
         val page = response.request.url.queryParameter("page")?.toIntOrNull() ?: 1
         val numPages = json.optInt("num_pages", page)
-        val arr: JSONArray = json.getJSONArray("result")
+        val arr: JSONArray = json.optJSONArray("result") ?: JSONArray()
         val entries = (0 until arr.length()).map { galleryToSManga(arr.getJSONObject(it)) }
         return MangasPage(entries, hasNextPage = page < numPages)
     }
 
     private fun galleryToSManga(g: JSONObject) = SManga.create().apply {
-        val titles = g.getJSONObject("title")
-        title = titles.optString("pretty").ifBlank { titles.optString("english") }
-        url = "/api/v2/galleries/" + g.getInt("id")
+        val titles = g.optJSONObject("title")
+        val id = g.getInt("id")
+        title = titles?.optString("pretty")?.ifBlank { titles.optString("english") } ?: id.toString()
+        url = "/g/$id/"
 
-        thumbnail_url = imageUrl(g.getString("media_id"), g.getJSONObject("images"), "thumbnail", 1)
+        val mediaId = g.getString("media_id")
+        val images = g.getJSONObject("images")
+        thumbnail_url = imageUrl(mediaId, images, "thumbnail")
 
-        genre = g.getJSONArray("tags").let { arr ->
-            (0 until arr.length())
-                .map { arr.getJSONObject(it) }
-                .filter { it.getString("type") == "category" }
-                .joinToString(", ") { it.getString("name") }
-        }
+        val tagsArr = g.optJSONArray("tags") ?: JSONArray()
+        val tagsList = (0 until tagsArr.length()).map { tagsArr.getJSONObject(it) }
+
+        artist = tagsList.filter { it.optString("type") == "artist" }
+            .joinToString(", ") { it.optString("name") }
+            .ifBlank {
+                tagsList.filter { it.optString("type") == "group" }
+                    .joinToString(", ") { it.optString("name") }
+            }
+        author = artist
+
+        genre = tagsList
+            .filter { it.optString("type") in setOf("tag", "category", "parody", "character") }
+            .joinToString(", ") { it.optString("name") }
+
         status = SManga.COMPLETED
         description = buildString {
-            append("ID: ").append(g.getInt("id"))
-            append("\nPages: ").append(g.getInt("num_pages"))
+            append("ID: ").append(id)
+            append("\nPages: ").append(g.optInt("num_pages", 0))
             append("\nUploaded: ").append(formatDate(g.optLong("upload_date", 0L)))
             val scanlator = g.optString("scanlator")
             if (scanlator.isNotBlank()) append("\nScanlator: ").append(scanlator)
@@ -120,8 +148,10 @@ class NHentaiApi : HttpSource() {
 
     // ─────────────────────── DETAILS ───────────────────────
 
-    override fun mangaDetailsRequest(manga: SManga): Request =
-        GET(baseUrl + manga.url, headers)
+    override fun mangaDetailsRequest(manga: SManga): Request {
+        val id = manga.url.split("/").filter { it.isNotBlank() }.last()
+        return GET("$apiUrl/galleries/$id", headers)
+    }
 
     override fun mangaDetailsParse(response: Response): SManga =
         galleryToSManga(JSONObject(response.body?.string() ?: ""))
@@ -133,10 +163,12 @@ class NHentaiApi : HttpSource() {
 
     override fun chapterListParse(response: Response): List<SChapter> {
         val gallery = JSONObject(response.body?.string() ?: "")
+        val id = gallery.getInt("id")
         return listOf(
             SChapter.create().apply {
-                name = "Read"
-                url = "/api/v2/galleries/" + gallery.getInt("id")
+                name = "Chapter"
+                url = "/g/$id/"
+                chapter_number = 1f
                 date_upload = gallery.optLong("upload_date", 0L) * 1000
             },
         )
@@ -144,8 +176,10 @@ class NHentaiApi : HttpSource() {
 
     // ─────────────────────── PAGES ───────────────────────
 
-    override fun pageListRequest(chapter: SChapter): Request =
-        GET(baseUrl + chapter.url, headers)
+    override fun pageListRequest(chapter: SChapter): Request {
+        val id = chapter.url.split("/").filter { it.isNotBlank() }.last()
+        return GET("$apiUrl/galleries/$id", headers)
+    }
 
     override fun pageListParse(response: Response): List<Page> {
         val gallery = JSONObject(response.body?.string() ?: "")
@@ -162,9 +196,14 @@ class NHentaiApi : HttpSource() {
 
     // ─────────────────────── HELPERS ───────────────────────
 
-    private fun imageUrl(mediaId: String, images: JSONObject, kind: String, page: Int): String {
-        val info = images.getJSONObject(kind)
-        return "https://t.nhentai.net/galleries/$mediaId/${kind}.$page.${extFromType(info.getString("t"))}"
+    private fun imageUrl(mediaId: String, images: JSONObject, kind: String, page: Int = 1): String {
+        val info = images.optJSONObject(kind) ?: return ""
+        val ext = extFromType(info.optString("t"))
+        return when (kind) {
+            "cover" -> "https://t.nhentai.net/galleries/$mediaId/cover.$ext"
+            "thumbnail" -> "https://t.nhentai.net/galleries/$mediaId/thumb.$ext"
+            else -> "https://t.nhentai.net/galleries/$mediaId/${page}t.$ext"
+        }
     }
 
     private fun extFromType(t: String) = when (t) {
@@ -181,11 +220,7 @@ class NHentaiApi : HttpSource() {
         this.toHttpUrl().newBuilder()
 
     companion object {
-        // ═══════════════════════════════════════════════════════════════════
-        //   👇 1. PASTE YOUR API KEY HERE 👇
         private const val API_KEY = "nhk_GLndZseklvCuu5m8iB7QAKMiOAp3gej6B1h_3BCMSHY518km"
-        //   👆 1. PASTE YOUR API KEY HERE 👆
-        // ═══════════════════════════════════════════════════════════════════
 
         private val DATE_FORMAT = SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH)
     }

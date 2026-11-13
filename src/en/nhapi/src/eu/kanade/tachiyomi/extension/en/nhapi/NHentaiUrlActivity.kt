@@ -5,7 +5,6 @@ import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import kotlin.system.exitProcess
 
 /** Opens nhentai.net/g/<id>/ links from the browser straight into the app. */
 class NHentaiUrlActivity : Activity() {
@@ -29,6 +28,5 @@ class NHentaiUrlActivity : Activity() {
             Log.e("NHentaiUrlActivity", "could not parse uri from intent $intent")
         }
         finish()
-        exitProcess(0)
     }
 }
