@@ -1,8 +1,8 @@
 {
   "meta": {
-    "name": "My Repo",
-    "shortName": "Mine",
+    "name": "Extension Repo",
+    "shortName": "Extension",
     "website": "https://github.com/Rstdg/Extension",
-    "signingKeyFingerprint": "<sha256 of your signing cert, lowercase hex, no colons>"
+    "signingKeyFingerprint": ""
   }
 }
