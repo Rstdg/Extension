@@ -1,0 +1,79 @@
+apply plugin: 'com.android.application'
+apply plugin: 'org.jetbrains.kotlin.plugin.compose'
+
+ext {
+    extName = 'Google'
+    pkgNameSuffix = 'en.google'
+    extClass = '.Google'
+    extVersionCode = 1
+    isNsfw = false
+    libVersion = '1.4'
+}
+
+android {
+    namespace 'eu.kanade.tachiyomi.extension.en.google'
+    compileSdk 37
+
+    defaultConfig {
+        applicationId 'eu.kanade.tachiyomi.extension.en.google'
+        minSdk 29
+        targetSdk 37
+        versionCode 1
+        versionName '1.0.0'
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("${rootDir}/release.keystore")
+            storePassword 'extension123'
+            keyAlias 'extension'
+            keyPassword 'extension123'
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+    }
+
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.release
+        }
+        release {
+            signingConfig signingConfigs.release
+        }
+    }
+
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java {
+                srcDirs = [
+                    'src',
+                    fileTree(dir: '../../app/src/main/java', includes: [
+                        'eu/kanade/tachiyomi/source/**',
+                        'eu/kanade/tachiyomi/network/**'
+                    ])
+                ]
+            }
+            res.srcDirs = ['res']
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+}
+
+androidComponents {
+    onVariants(selector().all(), { variant ->
+        variant.outputs.forEach { output ->
+            output.outputFileName.set("tachiyomi-en.google.${android.defaultConfig.versionName}.apk")
+        }
+    })
+}
+
+dependencies {
+    implementation 'com.squareup.okhttp3:okhttp:5.3.2'
+    implementation 'org.jsoup:jsoup:1.18.3'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.11.0'
+}

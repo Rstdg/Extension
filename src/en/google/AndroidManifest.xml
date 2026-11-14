@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="eu.kanade.tachiyomi.extension.en.google">
+
+    <application
+        android:label="Google"
+        android:icon="@mipmap/ic_launcher"
+        android:hasCode="true">
+
+        <meta-data
+            android:name="tachiyomi.extension.class"
+            android:value=".Google" />
+        <meta-data
+            android:name="tachiyomi.extension.factory"
+            android:value="false" />
+        <meta-data
+            android:name="tachiyomi.extension.nsfw"
+            android:value="0" />
+        <meta-data
+            android:name="tachiyomi.extension.hasReadme"
+            android:value="0" />
+    </application>
+
+</manifest>
