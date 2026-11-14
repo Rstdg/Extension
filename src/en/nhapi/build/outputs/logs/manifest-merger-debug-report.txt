@@ -26,7 +26,7 @@ MERGED from [androidx.startup:startup-runtime:1.2.0] C:\Users\deang\.gradle\cach
 	android:extractNativeLibs
 		INJECTED from C:\Users\deang\AndroidStudioProjects\Extension\src\en\nhapi\AndroidManifest.xml
 	android:label
-		ADDED from C:\Users\deang\AndroidStudioProjects\Extension\src\en\nhapi\AndroidManifest.xml:6:9-41
+		ADDED from C:\Users\deang\AndroidStudioProjects\Extension\src\en\nhapi\AndroidManifest.xml:6:9-43
 	android:hasCode
 		ADDED from C:\Users\deang\AndroidStudioProjects\Extension\src\en\nhapi\AndroidManifest.xml:8:9-31
 	android:icon

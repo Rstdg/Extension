@@ -3,7 +3,7 @@
     package="eu.kanade.tachiyomi.extension.en.nhapi">
 
     <application
-        android:label="NHentai (API v2)"
+        android:label="Tachiyomi: nhentai"
         android:icon="@mipmap/ic_launcher"
         android:hasCode="true">
 

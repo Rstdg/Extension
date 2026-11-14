@@ -15,7 +15,7 @@
         android:extractNativeLibs="false"
         android:hasCode="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="NHentai (API v2)" >
+        android:label="Tachiyomi: nhentai" >
         <meta-data
             android:name="tachiyomi.extension.class"
             android:value=".NHentaiApi" />

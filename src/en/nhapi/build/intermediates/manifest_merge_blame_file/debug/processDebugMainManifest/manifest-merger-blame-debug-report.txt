@@ -24,8 +24,8 @@
 16-->C:\Users\deang\AndroidStudioProjects\Extension\src\en\nhapi\AndroidManifest.xml:8:9-31
 17        android:icon="@mipmap/ic_launcher"
 17-->C:\Users\deang\AndroidStudioProjects\Extension\src\en\nhapi\AndroidManifest.xml:7:9-43
-18        android:label="NHentai (API v2)" >
-18-->C:\Users\deang\AndroidStudioProjects\Extension\src\en\nhapi\AndroidManifest.xml:6:9-41
+18        android:label="Tachiyomi: nhentai" >
+18-->C:\Users\deang\AndroidStudioProjects\Extension\src\en\nhapi\AndroidManifest.xml:6:9-43
 19        <meta-data
 19-->C:\Users\deang\AndroidStudioProjects\Extension\src\en\nhapi\AndroidManifest.xml:10:9-12:43
 20            android:name="tachiyomi.extension.class"

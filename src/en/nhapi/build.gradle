@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'org.jetbrains.kotlin.plugin.compose'
 
 ext {
-    extName = 'NHentai (API v2)'
+    extName = 'Tachiyomi: nhentai'
     pkgNameSuffix = 'en.nhapi'
     extClass = '.NHentaiApi'
     extVersionCode = 1
