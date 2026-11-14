@@ -1,0 +1,78 @@
+apply plugin: 'com.android.application'
+apply plugin: 'org.jetbrains.kotlin.plugin.compose'
+
+ext {
+    extName = 'NHentai'
+    pkgNameSuffix = 'en.nhentai'
+    extClass = '.NHentai'
+    extVersionCode = 1
+    isNsfw = true
+    libVersion = '1.4'
+}
+
+android {
+    namespace 'eu.kanade.tachiyomi.extension.en.nhentai'
+    compileSdk 37
+
+    defaultConfig {
+        applicationId 'eu.kanade.tachiyomi.extension.en.nhentai'
+        minSdk 29
+        targetSdk 37
+        versionCode 1
+        versionName '1.4.1'
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("${rootDir}/release.keystore")
+            storePassword 'extension123'
+            keyAlias 'extension'
+            keyPassword 'extension123'
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+    }
+
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.release
+        }
+        release {
+            signingConfig signingConfigs.release
+        }
+    }
+
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java {
+                srcDirs = [
+                    'src',
+                    fileTree(dir: '../../app/src/main/java', includes: [
+                        'eu/kanade/tachiyomi/source/**',
+                        'eu/kanade/tachiyomi/network/**'
+                    ])
+                ]
+            }
+            res.srcDirs = ['res']
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+}
+
+androidComponents {
+    onVariants(selector().all(), { variant ->
+        variant.outputs.forEach { output ->
+            output.outputFileName.set("tachiyomi-en.nhentai.${android.defaultConfig.versionName}.apk")
+        }
+    })
+}
+
+dependencies {
+    implementation 'com.squareup.okhttp3:okhttp:5.3.2'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.11.0'
+}

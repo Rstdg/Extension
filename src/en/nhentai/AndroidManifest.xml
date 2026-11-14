@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="eu.kanade.tachiyomi.extension.en.nhentai">
+
+    <application
+        android:label="NHentai"
+        android:icon="@mipmap/ic_launcher"
+        android:hasCode="true">
+
+        <meta-data
+            android:name="tachiyomi.extension.class"
+            android:value=".NHentai" />
+        <meta-data
+            android:name="tachiyomi.extension.factory"
+            android:value="false" />
+        <meta-data
+            android:name="tachiyomi.extension.nsfw"
+            android:value="1" />
+        <meta-data
+            android:name="tachiyomi.extension.hasReadme"
+            android:value="1" />
+
+        <activity
+            android:name=".NHentaiUrlActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:scheme="https"
+                    android:host="nhentai.net"
+                    android:pathPrefix="/g/" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

@@ -1,2 +1,0 @@
-eu.kanade.tachiyomi.extension.en.nhapi
-mipmap ic_launcher

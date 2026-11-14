@@ -24,4 +24,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "mihon"
 include(":app")
-include(":src:en:nhapi")
+include(":src:en:nhentai")
